@@ -20,6 +20,18 @@
             padding-bottom: 20px;
             overflow-x: hidden;
             width: 100%;
+            /* Optimización para iOS */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- AJUSTE PARA IMÁGENES EN IOS --- */
+        img {
+            display: block;
+            height: auto;
+            max-width: 100%;
+            /* Fuerza el renderizado correcto en Safari */
+            image-rendering: -webkit-optimize-contrast;
+            transform: translateZ(0); 
         }
 
         /* --- ANIMACIONES --- */
@@ -210,7 +222,7 @@
             position: relative; 
             width: 90%; 
             max-width: 500px; 
-            height: 650px; /* Aumentado para móvil */
+            height: 650px; 
         }
         .tarjeta-arco {
             position: absolute; background-color: rgba(252, 250, 247, 0.95);
@@ -527,6 +539,17 @@
     </div>
 
     <script>
+        // TRUCO PARA IOS: Forzar recarga de imágenes PNG evitando caché vieja
+        window.addEventListener('load', () => {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                const src = img.src;
+                if(src.includes('.png')) {
+                    img.src = src + '?v=' + new Date().getTime();
+                }
+            });
+        });
+
         // LÓGICA DE LA MÚSICA
         const musica = document.getElementById("musica-boda");
         const btnMusica = document.getElementById("boton-musica");

@@ -350,7 +350,110 @@
         .firmas-final { font-family: 'Great Vibes', cursive; font-size: 4rem; color: #8d7a64; margin: 0; line-height: 1.2; }
         .agradecimiento { font-size: 0.7rem; letter-spacing: 2px; margin-top: 30px; opacity: 0.5; font-style: italic; }
         .creditos { width: 100%; text-align: center; padding: 20px 0; font-size: 0.55rem; letter-spacing: 1px; color: #1c1006; opacity: 0.4; text-transform: uppercase; }
+/* ========================= */
+/* 📱 RESPONSIVE MOBILE FIX */
+/* ========================= */
+@media (max-width: 768px) {
 
+    /* TEXTOS */
+    .cursive {
+        font-size: 2rem;
+    }
+
+    .nombres-tit {
+        font-size: 2.5rem;
+    }
+
+    /* SECCIÓN SOBRE */
+    .escena-invitacion {
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .sobre-container {
+        height: auto;
+    }
+
+    .iniciales-dd {
+        font-size: 3rem;
+        top: 40px;
+    }
+
+    .sello-lacre {
+        width: 70px;
+        top: 180px;
+    }
+
+    .tarjeta-blanca {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 90%;
+        margin: 140px auto 0;
+    }
+
+    /* TARJETAS EVENTOS */
+    .layout-arcos {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .tarjeta-arco {
+        position: relative;
+        width: 90%;
+        border-radius: 100px 100px 15px 15px;
+    }
+
+    /* TIMELINE */
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+
+    .timeline-dot {
+        left: 10px;
+    }
+
+    .timeline-content,
+    .timeline-time {
+        width: 100%;
+        text-align: left !important;
+        padding: 0;
+    }
+
+    /* REGALO */
+    .tarjeta-regalo-cafe {
+        padding: 30px 15px 60px;
+    }
+
+    .regalo-cursive-top {
+        font-size: 3rem;
+    }
+
+    /* CONTADOR */
+    .capsula-tiempo {
+        border-radius: 40px;
+    }
+
+    .timer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* BOTONES */
+    .btn-blanco-outline {
+        padding: 12px 25px;
+        font-size: 0.8rem;
+    }
+}
     </style>
 </head>
 <body>

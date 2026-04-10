@@ -140,6 +140,24 @@
             max-width: 520px; 
             height: 100%; 
         }
+        
+        /* INICIALES DD SOBRE EL SOBRE */
+        .iniciales-dd {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 5.5rem;
+            color: #b5a48e;
+            opacity: 0.6;
+            letter-spacing: -8px;
+            font-weight: 300;
+            pointer-events: none;
+            text-shadow: -1px -1px 1px rgba(255,255,255,0.4), 1px 1px 1px rgba(0,0,0,0.1);
+        }
+
         .sobre-img { 
             width: 100%; 
             position: absolute; 
@@ -165,10 +183,10 @@
             width: 80%; 
             left: 10%; 
             position: absolute; 
-            top: 250px;          
+            top: 250px;           
             padding: 30px 20px 25px; 
             text-align: center; 
-            z-index: 2;          
+            z-index: 2;           
             box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
             box-sizing: border-box; 
             max-height: 380px;
@@ -182,6 +200,7 @@
         .mes-dia { font-size: 0.75rem; letter-spacing: 2px; color: #a69683; border-top: 1px solid #a69683; border-bottom: 1px solid #a69683; padding: 5px 0; min-width: 80px; }
         .year { letter-spacing: 8px; font-size: 1.2rem; margin-top: 15px; color: #a69683; }
 
+        /* --- SECCIÓN EVENTOS --- */
         .seccion-eventos-texturizada {
             width: 100%; background-image: url('fondo2.avif');
             background-size: cover; background-position: center;
@@ -216,18 +235,94 @@
         .timeline-time { width: 40%; font-family: 'Tenor Sans', sans-serif; font-size: 0.8rem; color: #8d7a64; text-align: left; padding: 0 15px; }
         .timeline-desc { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; margin: 0; }
 
-        .seccion-regalos { width: 100%; background-image: url('fondo3.avif'); background-size: cover; padding: 60px 20px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; position: relative; }
-        .tarjeta-regalo-cafe { background-image: url('fondo4.avif'); background-size: cover; width: 100%; max-width: 360px; padding: 40px 30px 80px; border-radius: 15px; text-align: center; color: #fdfaf5; box-shadow: 0 10px 30px rgba(0,0,0,0.15); box-sizing: border-box; z-index: 1; }
-        .tarjeta-regalo-cafe h3 { font-family: 'Alex Brush', cursive; font-size: 2.8rem; margin: 0 0 10px; font-weight: normal; }
-        .tarjeta-regalo-cafe .icon-regalo { width: 80px; margin-bottom: 15px; filter: brightness(0) invert(1); opacity: 0.9; }
-        .tarjeta-regalo-cafe h4 { font-size: 0.75rem; letter-spacing: 2px; margin: 15px 0 5px; font-weight: 600; color: #fff; }
-        .tarjeta-regalo-cafe p { font-size: 0.68rem; margin: 3px 0; letter-spacing: 0.5px; line-height: 1.4; font-weight: 300; font-style: italic; }
+        /* --- SECCIÓN REGALOS (ESTILO EXACTO SOLICITADO) --- */
+        .seccion-regalos { 
+            width: 100%; 
+            background-image: url('fondo3.avif'); 
+            background-size: cover; 
+            padding: 60px 20px; 
+            box-sizing: border-box; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
 
-        .tarjeta-dress-blanca { background-color: #fdfaf5; width: 85%; max-width: 300px; padding: 25px 20px; border-radius: 15px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.1); box-sizing: border-box; margin-top: -50px; z-index: 2; }
-        .tarjeta-dress-blanca h3 { font-family: 'Alex Brush', cursive; font-size: 2.2rem; color: #8d7a64; margin: 0 0 15px; font-weight: normal; }
-        .tarjeta-dress-blanca .icon-dress { width: 90px; margin-bottom: 15px; opacity: 0.8; }
-        .tarjeta-dress-blanca .tipo-vestimenta { font-size: 0.85rem; letter-spacing: 5px; color: #5d4936; text-transform: uppercase; margin: 0; }
+        .tarjeta-regalo-cafe { 
+            background-color: #b19d87;
+            background-image: url('fondo4.avif'); 
+            background-size: cover; 
+            width: 100%; 
+            max-width: 400px; 
+            padding: 40px 25px 80px; 
+            border-radius: 25px; 
+            text-align: center; 
+            color: #ffffff; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+            box-sizing: border-box; 
+        }
 
+        .regalo-cursive-top {
+            font-family: 'Alex Brush', cursive;
+            font-size: 4.5rem;
+            color: #ffffff;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .tarjeta-regalo-cafe img.icon-regalo-line { 
+            width: 120px; 
+            filter: brightness(0) invert(1); 
+            margin: -10px 0 20px; 
+        }
+
+        .titulo-datos-white { 
+            font-size: 1.2rem; 
+            letter-spacing: 4px; 
+            margin: 25px 0 10px; 
+            font-weight: 500; 
+            text-transform: uppercase; 
+            color: #ffffff;
+        }
+
+        .tarjeta-regalo-cafe p { 
+            font-family: 'Montserrat', sans-serif;
+            font-style: italic; 
+            text-transform: uppercase; 
+            font-size: 0.85rem; 
+            letter-spacing: 2px; 
+            line-height: 1.8; 
+            margin: 4px 0; 
+            font-weight: 200;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .tarjeta-dress-blanca { 
+            background-color: #fdfaf5; 
+            width: 85%; 
+            max-width: 300px; 
+            padding: 25px; 
+            border-radius: 15px; 
+            text-align: center; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
+            margin-top: -60px; 
+            z-index: 2; 
+        }
+
+        .tarjeta-dress-blanca h3 { 
+            font-family: 'Alex Brush', cursive; 
+            font-size: 2.2rem; 
+            color: #8d7a64; 
+            margin: 0 0 10px; 
+            font-weight: normal; 
+        }
+
+        .tipo-vestimenta { 
+            font-size: 0.8rem; 
+            letter-spacing: 5px; 
+            text-transform: uppercase; 
+        }
+
+        /* --- SECCIÓN INTERACTIVA --- */
         .seccion-interactiva { width: 100%; background-color: #f4f1e9; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; text-align: center; }
         .tarjeta-interactiva { background-color: white; width: 100%; max-width: 400px; padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); margin-bottom: 30px; box-sizing: border-box; }
         .tarjeta-interactiva h3 { font-family: 'Alex Brush', cursive; font-size: 2rem; color: #8d7a64; margin: 0 0 8px; }
@@ -235,6 +330,7 @@
         .input-musica { width: 100%; padding: 10px; border: 1px solid #e0d7c8; border-radius: 8px; margin-bottom: 15px; box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; outline: none; background-color: #fdfaf5; }
         .btn-interactivo { display: inline-block; background-color: #8d7a64; color: white; padding: 10px 22px; border-radius: 20px; text-decoration: none; font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase; border: none; cursor: pointer; font-weight: 600; }
 
+        /* --- CONTADOR --- */
         .seccion-contador { width: 100%; background-image: url('fondo5.avif'); background-size: cover; background-position: center; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; }
         .capsula-tiempo { background-image: url('fondo6.avif'); background-size: cover; background-position: center; width: 100%; max-width: 500px; padding: 30px 20px; border-radius: 100px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px; }
         .preparate { letter-spacing: 5px; font-size: 1.2rem; margin: 0; font-weight: 200; }
@@ -273,6 +369,8 @@
         
     <div class="escena-invitacion">
         <div class="sobre-container">
+            <div class="iniciales-dd">DD</div>
+            
             <img src="sobre.avif" class="sobre-img" alt="Sobre">
             <img src="sello.avif" class="sello-lacre" alt="Sello">
             <div class="tarjeta-blanca">
@@ -297,7 +395,7 @@
                 <p class="lugar-tit">Casa San Juan</p>
                 <p class="direccion">Cumbayá <br> Quito, Ecuador</p>
                 <p class="hora">17:00 hs</p>
-                <a href="https://maps.app.goo.gl/kxT99iTnM8TJ47Nj8?g_st=aw" target=" target="_blank" class="btn-outline">COMO LLEGAR</a>
+                <a href="https://maps.app.goo.gl/kxT99iTnM8TJ47Nj8?g_st=aw" target="_blank" class="btn-outline">COMO LLEGAR</a>
             </div>
             <div class="tarjeta-arco arco-fiesta">
                 <img src="fiesta.avif" alt="Fiesta" class="icon-img">
@@ -305,7 +403,7 @@
                 <p class="lugar-tit">Casa San Juan</p>
                 <p class="direccion">Cumbayá <br> Quito, Ecuador</p>
                 <p class="hora">19:30 hs</p>
-                <a href="https://maps.app.goo.gl/kxT99iTnM8TJ47Nj8?g_st=aw" target=" target="_blank" class="btn-outline">COMO LLEGAR</a>
+                <a href="https://maps.app.goo.gl/kxT99iTnM8TJ47Nj8?g_st=aw" target="_blank" class="btn-outline">COMO LLEGAR</a>
             </div>
         </div>
     </div>
@@ -343,22 +441,23 @@
 
     <div class="seccion-regalos reveal">
         <div class="tarjeta-regalo-cafe">
-            <h3>Regalo</h3>
-            <img src="regalo.avif" alt="Regalo" class="icon-regalo">
-            <p>Si desean hacernos un presente,</p>
-            <p>pueden realizarlo a nuestra cuenta:</p>
-            <h4>CUENTA</h4>
-            <p>Ahorros - Produbanco</p>
-            <p>Número de cuenta: 12050109257</p>
-            <p>Cédula de identidad: 2000043014</p>
-            <p>Nombre: Daphne Armas</p>
-            <h4>BUZON</h4>
-            <p>En el salón habrá un buzón donde podrás dejar tu regalo en forma presencial.</p>
+            <h2 class="regalo-cursive-top">Regalo</h2>
+            <img src="regalo.avif" alt="Regalo" class="icon-regalo-line">
+            
+            <h4 class="titulo-datos-white">CUENTA</h4>
+            <p>AHORROS - PRODUBANCO</p>
+            <p>NÚMERO DE CUENTA: 12050109257</p>
+            <p>CÉDULA DE IDENTIDAD: 2000043014</p>
+            <p>NOMBRE: DAPHNE ARMAS</p>
+            
+            <h4 class="titulo-datos-white">BUZÓN</h4>
+            <p>EN EL SALÓN HABRÁ UN BUZÓN DONDE PODRÁS</p>
+            <p>DEJAR TU REGALO EN FORMA PRESENCIAL.</p>
         </div>
 
         <div class="tarjeta-dress-blanca reveal">
             <h3>Dress code</h3>
-            <img src="dress.avif" alt="Dress Code" class="icon-dress">
+            <img src="dress.avif" alt="Dress Code" class="icon-dress" style="width: 50px; opacity: 0.7; margin-bottom: 10px;">
             <p class="tipo-vestimenta">FORMAL</p>
         </div>
     </div>

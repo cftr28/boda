@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Invitación Daphne y Daniel</title>
+    <title>Boda Daphne y Daniel</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@200;400;600&family=Tenor+Sans&family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&display=swap" rel="stylesheet">
 
@@ -61,19 +61,17 @@
             align-items: center;
             color: #5d4936; 
             padding-bottom: 20px;
-            overflow-x: hidden; /* Vital para que no se mueva de lado en móvil */
+            overflow-x: hidden;
             width: 100%;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- AJUSTE PARA IMÁGENES Y CENTRADO --- */
         img {
             display: block;
             height: auto;
             max-width: 100%;
             margin-left: auto;
             margin-right: auto;
-            /* Mejora para que no se pixelen en iPhone/Android */
             image-rendering: -webkit-optimize-contrast; 
             transform: translateZ(0); 
         }
@@ -178,7 +176,7 @@
             line-height: 1.1;
         }
 
-        /* --- SECCIÓN 2: ESCENA DEL SOBRE --- */
+        /* --- SECCIÓN 2: ESCENA DEL SOBRE (CORREGIDA) --- */
         .escena-invitacion {
             position: relative; 
             width: 100%; 
@@ -189,19 +187,19 @@
             background-image: url('fondo1.png');
             background-size: cover; 
             background-position: center; 
-            height: auto;
             min-height: 600px;
         }
+        
         .sobre-container { 
             position: relative; 
             width: 90%; 
             max-width: 520px; 
-            height: 550px; 
+            /* Quitamos height fijo para que el flujo de imagen mande */
         }
         
         .iniciales-dd {
             position: absolute;
-            top: 5%;
+            top: 8%; /* Ajustado para estar centrado en la solapa */
             left: 50%;
             transform: translateX(-50%);
             z-index: 3;
@@ -217,17 +215,16 @@
 
         .sobre-img { 
             width: 100%; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
+            position: relative; /* Cambiado de absolute a relative para dar altura al contenedor */
             z-index: 2; 
             filter: drop-shadow(0 15px 30px rgba(0,0,0,0.2)); 
         }
+
         .sello-lacre { 
             position: absolute; 
-            width: clamp(70px, 20vw, 100px);
-            z-index: 3; 
-            top: 38%; 
+            width: clamp(70px, 18vw, 100px);
+            z-index: 4; 
+            top: 58%; /* Posición fija respecto al contenedor */
             left: 50%; 
             transform: translate(-50%, -50%); 
             filter: drop-shadow(0 8px 15px rgba(0,0,0,0.3)); 
@@ -240,14 +237,16 @@
             width: 85%; 
             left: 7.5%; 
             position: absolute; 
-            top: 40%; 
+            top: 58%; /* Empieza exactamente donde está el sello */
             padding: 25px 15px; 
             text-align: center; 
-            z-index: 2; 
+            z-index: 1; 
             box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
             box-sizing: border-box; 
             color: #a69683;
         }
+
+        /* --- RESTO DE ESTILOS MANTENIDOS --- */
         .tarjeta-blanca .lema { font-size: 0.55rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; color: #a69683; }
         .tarjeta-blanca .nombre-tarjeta { font-family: 'Bodoni Moda', serif; font-size: clamp(1.8rem, 8vw, 3rem); margin: 5px 0; color: #a69683; text-transform: none; font-weight: 400;}
         .tarjeta-blanca .honor { font-size: 0.5rem; margin: 10px 0; text-transform: uppercase; letter-spacing: 1.5px; color: #a69683; line-height: 1.4; }
@@ -256,7 +255,6 @@
         .mes-dia { font-size: 0.65rem; letter-spacing: 1.5px; color: #a69683; border-top: 1px solid #a69683; border-bottom: 1px solid #a69683; padding: 3px 0; min-width: 60px; }
         .year { letter-spacing: 6px; font-size: 1rem; margin-top: 10px; color: #a69683; }
 
-        /* --- SECCIÓN EVENTOS --- */
         .seccion-eventos-texturizada {
             width: 100%; background-image: url('fondo2.png');
             background-size: cover; background-position: center;
@@ -278,19 +276,13 @@
         .arco-ceremonia { top: 0; left: 0; z-index: 1; }
         .arco-fiesta { top: 180px; right: 0; z-index: 2; background-color: #f2eee6; }
         
-        .icon-img { 
-    width: 90px; /* <--- He aumentado el tamaño aquí */
-    height: auto; 
-    margin-bottom: 10px; /* <--- También he aumentado un poco el margen inferior para que no pegue con el texto */
-    opacity: 0.7; 
-}
+        .icon-img { width: 90px; height: auto; margin-bottom: 10px; opacity: 0.7; }
         .cursive-sub { font-family: 'Alex Brush', cursive; font-size: 1.6rem; color: #8d7a64; margin: 2px 0; }
         .lugar-tit { font-size: 0.7rem; font-weight: 600; margin: 3px 0; }
         .direccion { font-size: 0.65rem; opacity: 0.8; margin-bottom: 8px; line-height: 1.2; }
         .hora { font-size: 0.9rem; letter-spacing: 1.5px; margin-bottom: 10px; }
         .btn-outline { display: inline-block; padding: 6px 18px; border: 1px solid #8d7a64; border-radius: 20px; color: #8d7a64; text-decoration: none; font-size: 0.55rem; letter-spacing: 1px; }
 
-        /* --- ITINERARIO --- */
         .seccion-itinerario { width: 100%; padding: 60px 10px; background-color: #fdfaf5; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; }
         .itinerario-titulo { font-family: 'Alex Brush', cursive; font-size: 2.2rem; color: #8d7a64; margin-bottom: 30px; }
         .timeline { position: relative; max-width: 400px; width: 100%; }
@@ -303,7 +295,6 @@
         .timeline-time { width: 45%; font-family: 'Tenor Sans', sans-serif; font-size: 0.75rem; color: #8d7a64; text-align: left; padding: 0 10px; box-sizing: border-box; }
         .timeline-desc { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin: 0; }
 
-        /* --- SECCIÓN REGALOS --- */
         .seccion-regalos { 
             width: 100%; 
             background-image: url('fondo3.png'); 
@@ -392,13 +383,8 @@
             font-weight: normal; 
         }
 
-        .tipo-vestimenta { 
-            font-size: 0.75rem; 
-            letter-spacing: 4px; 
-            text-transform: uppercase; 
-        }
+        .tipo-vestimenta { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; }
 
-        /* --- SECCIÓN INTERACTIVA --- */
         .seccion-interactiva { 
             width: 100%; 
             background-color: #f4f1e9; 
@@ -426,12 +412,9 @@
         .tarjeta-interactiva p { font-size: 0.75rem; line-height: 1.5; margin-bottom: 15px; color: #5d4936; opacity: 0.8; }
         
         .icon-small { margin: 0 auto 10px !important; }
-
-        /* Ajuste para evitar zoom automático en iPhone */
         .input-musica { width: 100%; padding: 12px; border: 1px solid #e0d7c8; border-radius: 8px; margin-bottom: 15px; box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-size: 16px; outline: none; background-color: #fdfaf5; }
         .btn-interactivo { display: inline-block; background-color: #8d7a64; color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; border: none; cursor: pointer; font-weight: 600; width: auto; min-width: 160px;}
 
-        /* --- CONTADOR --- */
         .seccion-contador { width: 100%; background-image: url('fondo5.png'); background-size: cover; background-position: center; padding: 60px 15px; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; }
         .capsula-tiempo { background-image: url('fondo6.png'); background-size: cover; background-position: center; width: 100%; max-width: 500px; padding: 30px 10px; border-radius: 50px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px; box-sizing: border-box; }
         .preparate { letter-spacing: 3px; font-size: 1.1rem; margin: 0; font-weight: 200; }
@@ -445,7 +428,6 @@
         .confirmacion-texto p { font-size: 0.8rem; line-height: 1.5; margin-bottom: 25px; letter-spacing: 0.5px; }
         .btn-blanco-outline { display: inline-block; padding: 12px 30px; border: 2px solid #fdfaf5; border-radius: 30px; color: #fdfaf5; text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* --- FINAL --- */
         .seccion-final { width: 100%; padding: 60px 20px 40px; background-image: url('fondo1.png'); background-size: cover; background-position: center; text-align: center; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; }
         .divisor-elegante { width: 50px; height: 1px; background-color: #8d7a64; margin-bottom: 25px; opacity: 0.6; }
         .texto-final { font-family: 'Tenor Sans', sans-serif; font-size: 1rem; letter-spacing: 4px; color: #5d4936; text-transform: uppercase; margin-bottom: 10px; font-weight: 300; }
@@ -457,7 +439,6 @@
             .arco-fiesta { top: 320px; }
             .layout-arcos { height: 680px; }
             .tarjeta-arco { width: 95%; }
-            .iniciales-dd { top: 10%; }
         }
 
     </style>
@@ -563,8 +544,8 @@
             <p>NOMBRE: DAPHNE ARMAS</p>
 
             <h4 class="titulo-datos-white">BUZON</h4>
-            <p>En el salón habrá un buzón donde podrás dejar </p>
-            <p>podrás dejar tu regalo en forma presencial.</p>
+            <p>En el salón habrá un buzón donde podrás dejar tu </p>
+            <p>regalo en forma presencial.</p>
         </div>
 
         <div class="tarjeta-dress-blanca reveal">
@@ -621,7 +602,7 @@
     </div>
 
     <script>
-        // LÓGICA DEL PRELOADER (1 SEGUNDO)
+        // LÓGICA DEL PRELOADER
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const loader = document.getElementById('preloader');

@@ -440,7 +440,7 @@
         .aggradecimiento { font-size: 0.65rem; letter-spacing: 2px; margin-top: 25px; opacity: 0.5; font-style: italic; }
         .creditos { width: 100%; text-align: center; padding: 20px 10px; font-size: 0.5rem; letter-spacing: 1px; color: #1c1006; opacity: 0.4; text-transform: uppercase; box-sizing: border-box;}
 
- /* --- MEDIA QUERIES PARA MÓVIL (VERSIÓN FINAL OPTIMIZADA) --- */
+/* --- MEDIA QUERIES PARA MÓVIL (VERSIÓN FINAL CON ESPACIADOS) --- */
 
 @media (max-width: 480px) {
     .sobre-container {
@@ -457,21 +457,22 @@
     .tarjeta-blanca {
         width: 76%;
         left: 12%;
-        /* Ajuste manual: Subimos la tarjeta 2mm respecto al 36% original */
-       top: calc(36% - 5mm);
+        /* Mantenemos la tarjeta elevada para compensar el nuevo padding */
+        top: calc(36% - 5mm); 
         
-        /* Padding balanceado para comprimir el contenido */
-        padding: 15px 10px 8px 10px;
+        /* ESPACIO INICIAL: 30px arriba para que el texto respire */
+        padding: 30px 10px 15px 10px; 
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 0px; 
     }
 
-    /* Estilos de texto compactos */
+    /* ESPACIO DESPUÉS DE CADA LÍNEA */
     .tarjeta-blanca .nombre-tarjeta {
         font-size: 1.6rem;
-        margin: 2px 0;
+        margin: 0 0 12px 0; /* Espacio bajo los nombres */
         line-height: 1;
         letter-spacing: 0px;
     }
@@ -479,16 +480,16 @@
     .tarjeta-blanca .honor, 
     .tarjeta-blanca .lema {
         font-size: 0.45rem;
-        margin: 2px 0;
-        line-height: 1.2;
+        margin: 0 0 10px 0; /* Espacio bajo el lema y honor */
+        line-height: 1.4;
         letter-spacing: 1px;
         text-transform: uppercase;
         opacity: 0.8;
     }
 
-    /* Bloque de fecha y calendario */
+    /* Bloque de fecha con más aire vertical */
     .fecha-wrap {
-        margin: 5px 0;
+        margin: 15px 0; 
         gap: 12px;
         align-items: center;
     }
@@ -507,7 +508,7 @@
     }
 
     .year {
-        margin-top: 5px;
+        margin-top: 10px; /* Espacio antes del año */
         font-size: 1rem;
         letter-spacing: 8px;
     }
@@ -530,16 +531,16 @@
     }
 }
 
-/* Ajustes específicos para móviles muy pequeños (ej. iPhone SE) */
+/* Ajustes para pantallas mini */
 @media (max-width: 370px) {
     .tarjeta-blanca {
-        /* También subimos 2mm aquí para mantener consistencia */
-        top: calc(38% - 2mm); 
-        padding-top: 10px;
+        top: calc(38% - 5mm);
+        padding-top: 20px; /* Un poco menos de espacio arriba en pantallas mini */
     }
     
     .tarjeta-blanca .nombre-tarjeta {
         font-size: 1.4rem;
+        margin-bottom: 8px;
     }
     
     .num-grande {

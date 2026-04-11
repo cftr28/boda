@@ -443,28 +443,44 @@
         /* --- MEDIA QUERIES PARA MÓVIL (CORRECCIÓN DE DESBORDE) --- */
         @media (max-width: 480px) {
             .sobre-container {
-                aspect-ratio: auto; /* Permite que el contenedor crezca si es necesario */
-                min-height: 480px; 
+                aspect-ratio: 1 / 1.2;
+                min-height: auto;
             }
             .tarjeta-blanca {
-                padding: 15px 10px;
-                top: 38%; /* Ajuste de posición */
-                width: 85%;
-                left: 7.5%;
+                padding: 12px 10px;
+                top: 40%;
+                width: 84%;
+                left: 8%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
             .tarjeta-blanca .nombre-tarjeta {
-                font-size: 1.6rem;
-                margin: 2px 0;
+                font-size: 1.5rem;
+                margin: 0;
+                line-height: 1;
             }
             .tarjeta-blanca .honor, .tarjeta-blanca .lema {
-                margin: 4px 0;
+               
+                margin: 2px 0;
+                font-size: 0.45rem;
+                line-height: 1.1;
+
             }
             .fecha-wrap {
-                margin: 5px 0;
+                margin: 4px 0;
                 gap: 5px;
             }
             .num-grande {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+            }
+            .mes-dia {
+                font-size: 0.55rem;
+                min-width: 50px;
+            }
+            .year {
+                margin-top: 5px;
+                font-size: 0.8rem;
             }
             .arco-fiesta { top: 320px; }
             .layout-arcos { height: 680px; }
@@ -473,8 +489,10 @@
 
         @media (max-width: 370px) {
             .tarjeta-blanca {
-                top: 35%;
+                top: 38%;
+                padding: 8px 5px;
             }
+            .tarjeta-blanca .nombre-tarjeta { font-size: 1.3rem; }
         }
 
     </style>

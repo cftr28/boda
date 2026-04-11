@@ -440,13 +440,14 @@
         .aggradecimiento { font-size: 0.65rem; letter-spacing: 2px; margin-top: 25px; opacity: 0.5; font-style: italic; }
         .creditos { width: 100%; text-align: center; padding: 20px 10px; font-size: 0.5rem; letter-spacing: 1px; color: #1c1006; opacity: 0.4; text-transform: uppercase; box-sizing: border-box;}
 
- /* --- MEDIA QUERIES PARA MÓVIL (CORRECCIÓN FINAL) --- */
+ /* --- MEDIA QUERIES PARA MÓVIL (VERSIÓN FINAL OPTIMIZADA) --- */
+
 @media (max-width: 480px) {
     .sobre-container {
         aspect-ratio: 1 / 1.3;
     }
 
-    /* Sello en la punta del sobre */
+    /* Sello posicionado en la punta del sobre */
     .sello-lacre {
         top: 30% !important;
         width: 75px !important;
@@ -456,16 +457,18 @@
     .tarjeta-blanca {
         width: 76%;
         left: 12%;
-        top: 36%;
-        /* Padding optimizado: 15px arriba, 8px abajo */
+        /* Ajuste manual: Subimos la tarjeta 2mm respecto al 36% original */
+        top: calc(36% - 2mm); 
+        
+        /* Padding balanceado para comprimir el contenido */
         padding: 15px 10px 8px 10px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 0px; /* Control manual de espacios con márgenes */
+        gap: 0px; 
     }
 
-    /* Textos comprimidos para evitar que la tarjeta desborde */
+    /* Estilos de texto compactos */
     .tarjeta-blanca .nombre-tarjeta {
         font-size: 1.6rem;
         margin: 2px 0;
@@ -483,7 +486,7 @@
         opacity: 0.8;
     }
 
-    /* Sección de fecha compacta */
+    /* Bloque de fecha y calendario */
     .fecha-wrap {
         margin: 5px 0;
         gap: 12px;
@@ -509,7 +512,7 @@
         letter-spacing: 8px;
     }
 
-    /* Arcos y Layout */
+    /* Configuración de Arcos (Layout inferior) */
     .layout-arcos {
         height: 640px;
         display: flex;
@@ -527,15 +530,18 @@
     }
 }
 
-/* Pantallas extra pequeñas (iPhone SE, etc.) */
+/* Ajustes específicos para móviles muy pequeños (ej. iPhone SE) */
 @media (max-width: 370px) {
     .tarjeta-blanca {
-        top: 38%;
-        padding-top: 10px; /* Reducido para que no se salga del sobre */
+        /* También subimos 2mm aquí para mantener consistencia */
+        top: calc(38% - 2mm); 
+        padding-top: 10px;
     }
+    
     .tarjeta-blanca .nombre-tarjeta {
         font-size: 1.4rem;
     }
+    
     .num-grande {
         font-size: 2rem;
     }

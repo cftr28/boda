@@ -440,67 +440,94 @@
         .aggradecimiento { font-size: 0.65rem; letter-spacing: 2px; margin-top: 25px; opacity: 0.5; font-style: italic; }
         .creditos { width: 100%; text-align: center; padding: 20px 10px; font-size: 0.5rem; letter-spacing: 1px; color: #1c1006; opacity: 0.4; text-transform: uppercase; box-sizing: border-box;}
 
-      /* --- MEDIA QUERIES PARA MÓVIL (CORRECCIÓN DE DESBORDE) --- */
-        @media (max-width: 480px) {
-            .sobre-container {
-                aspect-ratio: 1 / 1.25; /* Damos un poquito más de altura al contenedor */
-            }
-            .tarjeta-blanca {
-                padding: 35px 12px 15px 12px;
-                top: 60%; 
-                width: 84%;
-                left: 8%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 5px; /* Crea espacio uniforme entre cada bloque de texto */
-            }
-            .tarjeta-blanca .nombre-tarjeta {
-                font-size: 1.6rem;
-                margin: 5px 0;
-                line-height: 1.2; /* Más espacio entre "Daphne y Daniel" */
-                letter-spacing: 1px; /* Letras un poco más separadas */
-            }
-            .tarjeta-blanca .honor, .tarjeta-blanca .lema {
-                margin: 3px 0;
-                font-size: 0.48rem;
-                line-height: 1.4; /* Aumenta el espacio entre líneas de los textos pequeños */
-                letter-spacing: 1.2px;
-            }
-            .fecha-wrap {
-                margin: 8px 0; /* Más espacio arriba y abajo de la fecha */
-                gap: 8px;
-            }
-            .num-grande {
-                font-size: 2rem;
-                letter-spacing: 1px;
-            }
-            .mes-dia {
-                font-size: 0.55rem;
-                min-width: 55px;
-                padding: 4px 0; /* Más espacio dentro de las barritas de SÁBADO / AGOSTO */
-            }
-            .year {
-                margin-top: 8px;
-                font-size: 0.85rem;
-                letter-spacing: 5px;
-            }
-
-            /* Mantenemos el resto igual */
-            .arco-fiesta { top: 320px; }
-            .layout-arcos { height: 680px; }
-            .tarjeta-arco { width: 95%; }
+  /* --- MEDIA QUERIES PARA MÓVIL (CORRECCIÓN FINAL SEGÚN IMAGEN) --- */
+    @media (max-width: 480px) {
+        .sobre-container {
+            aspect-ratio: 1 / 1.3; 
+        }
+        
+        /* Subimos el sello para que quede en la punta del sobre */
+        .sello-lacre {
+            top: 30% !important; 
+            width: 75px !important;
+            z-index: 4;
         }
 
-        @media (max-width: 370px) {
-            .tarjeta-blanca {
-                top: 37%;
-                padding: 10px 8px;
-                gap: 3px;
-            }
-            .tarjeta-blanca .nombre-tarjeta { font-size: 1.4rem; }
-            .tarjeta-blanca .honor { font-size: 0.42rem; }
+        /* Bajamos la tarjeta para que el sello no tape el texto */
+        .tarjeta-blanca {
+            padding: 40px 15px 20px 15px; 
+            top: 40%; 
+            width: 86%;
+            left: 7%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 4px; 
         }
+
+        .tarjeta-blanca .lema {
+            font-size: 0.45rem;
+            line-height: 1.4;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+
+        .tarjeta-blanca .nombre-tarjeta {
+            font-size: 1.8rem; /* Tamaño elegante para los nombres */
+            margin: 5px 0;
+            line-height: 1;
+            letter-spacing: 0px;
+        }
+
+        .tarjeta-blanca .honor {
+            margin: 8px 0;
+            font-size: 0.45rem;
+            line-height: 1.4;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .fecha-wrap {
+            margin: 10px 0;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .num-grande {
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+
+        .mes-dia {
+            font-size: 0.5rem;
+            min-width: 65px;
+            padding: 5px 0;
+            border-top: 0.5px solid #a69683;
+            border-bottom: 0.5px solid #a69683;
+        }
+
+        .year {
+            margin-top: 10px;
+            font-size: 1rem;
+            letter-spacing: 8px;
+        }
+
+        /* Ajustes de secciones inferiores */
+        .arco-fiesta { top: 320px; }
+        .layout-arcos { height: 680px; }
+        .tarjeta-arco { width: 95%; }
+    }
+
+    /* Ajuste para pantallas muy pequeñas */
+    @media (max-width: 370px) {
+        .tarjeta-blanca {
+            padding-top: 35px;
+            top: 38%;
+        }
+        .tarjeta-blanca .nombre-tarjeta { font-size: 1.5rem; }
+        .num-grande { font-size: 2rem; }
+    }
 
     </style>
 </head>

@@ -534,17 +534,15 @@
             letter-spacing: 8px;
         }
 
-        /* Ajustes de secciones inferiores */
-        /* Ajustes para que los arcos se toquen apenas */
+       /* Ajuste a 285px para que respire el primer arco */
             .arco-fiesta { 
-                /* Aumentamos de 245px a 270px para que baje */
-                top: 270px; 
+                top: 285px; 
                 z-index: 2; 
             }
 
             .layout-arcos { 
-                /* Si bajas el arco, debes subir un poco el alto total para que quepa */
-                height: 620px; 
+                /* Subimos a 640px para compensar que el segundo arco ahora llega más abajo */
+                height: 640px; 
                 display: flex;
                 flex-direction: column;
                 align-items: center;

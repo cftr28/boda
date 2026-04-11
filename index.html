@@ -176,7 +176,7 @@
             line-height: 1.1;
         }
 
-        /* --- SECCIÓN 2: ESCENA DEL SOBRE (CORREGIDA PARA MÓVIL) --- */
+        /* --- SECCIÓN 2: ESCENA DEL SOBRE (CORREGIDA) --- */
         .escena-invitacion {
             position: relative; 
             width: 100%; 
@@ -193,7 +193,7 @@
             position: relative; 
             width: 90%; 
             max-width: 520px; 
-            aspect-ratio: 1 / 1.1; /* Mantiene la proporción para que los hijos no se desplacen */
+            aspect-ratio: 1 / 1.1; 
         }
         
         .iniciales-dd {
@@ -240,23 +240,26 @@
             left: 10%; 
             position: absolute; 
             top: 42%;
-            padding: 40px 20px; 
+            padding: 30px 20px; /* Padding reducido para evitar desborde */
             text-align: center; 
             z-index: 2;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
             box-sizing: border-box; 
             color: #a69683;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        /* --- RESTO DE ESTILOS MANTENIDOS --- */
-        .tarjeta-blanca .lema { font-size: 0.55rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; color: #a69683; }
-        .tarjeta-blanca .nombre-tarjeta { font-family: 'Bodoni Moda', serif; font-size: clamp(1.8rem, 8vw, 3rem); margin: 5px 0; color: #a69683; text-transform: none; font-weight: 400;}
-        .tarjeta-blanca .honor { font-size: 0.5rem; margin: 10px 0; text-transform: uppercase; letter-spacing: 1.5px; color: #a69683; line-height: 1.4; }
+        .tarjeta-blanca .lema { font-size: 0.55rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 2px; color: #a69683; }
+        .tarjeta-blanca .nombre-tarjeta { font-family: 'Bodoni Moda', serif; font-size: clamp(1.8rem, 8vw, 3rem); margin: 5px 0; color: #a69683; text-transform: none; font-weight: 400; line-height: 1.1;}
+        .tarjeta-blanca .honor { font-size: 0.5rem; margin: 8px 0; text-transform: uppercase; letter-spacing: 1.5px; color: #a69683; line-height: 1.4; }
         .fecha-wrap { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 10px 0; }
         .num-grande { font-family: 'Tenor Sans', sans-serif; font-size: clamp(2.5rem, 10vw, 3.5rem); color: #a69683; line-height: 1; }
         .mes-dia { font-size: 0.65rem; letter-spacing: 1.5px; color: #a69683; border-top: 1px solid #a69683; border-bottom: 1px solid #a69683; padding: 3px 0; min-width: 60px; }
         .year { letter-spacing: 6px; font-size: 1rem; margin-top: 10px; color: #a69683; }
 
+        /* --- RESTO DE SECCIONES --- */
         .seccion-eventos-texturizada {
             width: 100%; background-image: url('fondo2.png');
             background-size: cover; background-position: center;
@@ -437,10 +440,41 @@
         .aggradecimiento { font-size: 0.65rem; letter-spacing: 2px; margin-top: 25px; opacity: 0.5; font-style: italic; }
         .creditos { width: 100%; text-align: center; padding: 20px 10px; font-size: 0.5rem; letter-spacing: 1px; color: #1c1006; opacity: 0.4; text-transform: uppercase; box-sizing: border-box;}
 
-        @media (max-width: 370px) {
+        /* --- MEDIA QUERIES PARA MÓVIL (CORRECCIÓN DE DESBORDE) --- */
+        @media (max-width: 480px) {
+            .sobre-container {
+                aspect-ratio: auto; /* Permite que el contenedor crezca si es necesario */
+                min-height: 480px; 
+            }
+            .tarjeta-blanca {
+                padding: 15px 10px;
+                top: 38%; /* Ajuste de posición */
+                width: 85%;
+                left: 7.5%;
+            }
+            .tarjeta-blanca .nombre-tarjeta {
+                font-size: 1.6rem;
+                margin: 2px 0;
+            }
+            .tarjeta-blanca .honor, .tarjeta-blanca .lema {
+                margin: 4px 0;
+            }
+            .fecha-wrap {
+                margin: 5px 0;
+                gap: 5px;
+            }
+            .num-grande {
+                font-size: 2.2rem;
+            }
             .arco-fiesta { top: 320px; }
             .layout-arcos { height: 680px; }
             .tarjeta-arco { width: 95%; }
+        }
+
+        @media (max-width: 370px) {
+            .tarjeta-blanca {
+                top: 35%;
+            }
         }
 
     </style>

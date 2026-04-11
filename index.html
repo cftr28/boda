@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boda Daphne y Daniel</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@200;400;600&family=Tenor+Sans&family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&display=swap" rel="stylesheet">
@@ -176,7 +176,7 @@
             line-height: 1.1;
         }
 
-        /* --- SECCIÓN 2: ESCENA DEL SOBRE (CORREGIDA) --- */
+        /* --- SECCIÓN 2: ESCENA DEL SOBRE (CORREGIDA PARA MÓVIL) --- */
         .escena-invitacion {
             position: relative; 
             width: 100%; 
@@ -187,19 +187,18 @@
             background-image: url('fondo1.png');
             background-size: cover; 
             background-position: center; 
-            min-height: 600px;
         }
         
         .sobre-container { 
             position: relative; 
             width: 90%; 
             max-width: 520px; 
-            /* Quitamos height fijo para que el flujo de imagen mande */
+            aspect-ratio: 1 / 1.1; /* Mantiene la proporción para que los hijos no se desplacen */
         }
         
         .iniciales-dd {
             position: absolute;
-            top: 8%; /* Ajustado para estar centrado en la solapa */
+            top: 5%; 
             left: 50%;
             transform: translateX(-50%);
             z-index: 3;
@@ -215,7 +214,10 @@
 
         .sobre-img { 
             width: 100%; 
-            position: relative; /* Cambiado de absolute a relative para dar altura al contenedor */
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
             z-index: 2; 
             filter: drop-shadow(0 15px 30px rgba(0,0,0,0.2)); 
         }
@@ -224,7 +226,7 @@
             position: absolute; 
             width: clamp(70px, 18vw, 100px);
             z-index: 4; 
-            top: 41%; /* Posición fija respecto al contenedor */
+            top: 40%; 
             left: 50%; 
             transform: translate(-50%, -50%); 
             filter: drop-shadow(0 8px 15px rgba(0,0,0,0.3)); 
@@ -235,12 +237,12 @@
             background-size: cover; 
             background-position: center;
             width: 80%; 
-            left: 9%; 
+            left: 10%; 
             position: absolute; 
-            top: 40%;
+            top: 42%;
             padding: 40px 20px; 
             text-align: center; 
-            z-index: 2; 
+            z-index: 2;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
             box-sizing: border-box; 
             color: #a69683;
@@ -432,7 +434,7 @@
         .divisor-elegante { width: 50px; height: 1px; background-color: #8d7a64; margin-bottom: 25px; opacity: 0.6; }
         .texto-final { font-family: 'Tenor Sans', sans-serif; font-size: 1rem; letter-spacing: 4px; color: #5d4936; text-transform: uppercase; margin-bottom: 10px; font-weight: 300; }
         .firmas-final { font-family: 'Great Vibes', cursive; font-size: clamp(3rem, 12vw, 4rem); color: #8d7a64; margin: 0; line-height: 1.2; }
-        .agradecimiento { font-size: 0.65rem; letter-spacing: 2px; margin-top: 25px; opacity: 0.5; font-style: italic; }
+        .aggradecimiento { font-size: 0.65rem; letter-spacing: 2px; margin-top: 25px; opacity: 0.5; font-style: italic; }
         .creditos { width: 100%; text-align: center; padding: 20px 10px; font-size: 0.5rem; letter-spacing: 1px; color: #1c1006; opacity: 0.4; text-transform: uppercase; box-sizing: border-box;}
 
         @media (max-width: 370px) {

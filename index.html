@@ -452,25 +452,39 @@
             width: 75px !important;
             z-index: 4;
         }
+.tarjeta-blanca {
+        /* No tocamos el ancho ni la posición horizontal porque te gustaron */
+        width: 76%; 
+        left: 12%; 
+        
+        /* 1. Reducimos el padding superior e inferior al mínimo (20px arriba, 10px abajo) */
+        padding: 20px 15px 10px 15px; 
+        
+        /* 2. Subimos un poco el top para que no se vea tan caída */
+        top: 38%; 
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        /* 3. Quitamos el gap (espacio automático) para controlarlo nosotros */
+        gap: 0px; 
+    }
 
-        /* Bajamos la tarjeta para que el sello no tape el texto */
-   .tarjeta-blanca {
-                /* 1. La hacemos más estrecha */
-                width: 76%; 
-                /* 2. La centramos (100% - 76% = 24. La mitad es 12%) */
-                left: 12%; 
-                
-                /* 3. Reducimos el largo (padding superior e inferior más cortos) */
-                padding: 25px 15px 15px 15px; 
-                
-                /* 4. Mantenemos la posición que ya te gustaba */
-                top: 40%; 
-                
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 2px; /* Reducimos el espacio entre líneas para que sea más compacta */
-            }
+    /* 4. Achicamos los márgenes de los textos para "comprimir" la tarjeta */
+    .tarjeta-blanca .nombre-tarjeta {
+        margin: 2px 0;
+        font-size: 1.6rem;
+    }
+
+    .tarjeta-blanca .honor, .tarjeta-blanca .lema {
+        margin: 2px 0;
+        line-height: 1.2;
+    }
+
+    .fecha-wrap {
+        margin: 5px 0; /* Esto reduce mucho el largo total */
+    }
 
         .tarjeta-blanca .lema {
             font-size: 0.45rem;
